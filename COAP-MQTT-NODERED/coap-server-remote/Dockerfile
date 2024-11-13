@@ -19,7 +19,7 @@ RUN git sparse-checkout set simple-coap-server
 
 WORKDIR /app/simple-coap-server
 RUN mvn dependency:go-offline -B
-RUN mvn clean install
+#RUN mvn clean install
 RUN mvn package -DskipTests
 
 # Fase 2: Run
@@ -33,7 +33,7 @@ COPY --from=build /app/simple-coap-server/target/lib/* /app/lib/
 
 # Copia il JAR generato dalla fase di build nella working directory del nuovo container
 COPY --from=build /app/simple-coap-server/target/*.jar simple-coap-server.jar
-
+ 
 # Esponi la porta su cui il servizio è in ascolto
 EXPOSE 5684
 

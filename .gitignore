@@ -5983,3 +5983,4 @@ it.univaq.disim.se4iot.coap.homeclient/bin/org/eclipse/californium/core/server/r
 it.univaq.disim.se4iot.coap.homeclient/bin/org/eclipse/californium/core/server/resources/ResourceAttributes.class
 it.univaq.disim.se4iot.coap.homeclient/bin/org/eclipse/californium/core/server/resources/ResourceAttributes$AttributeValues.class
 it.univaq.disim.se4iot.coap.homeclient/bin/org/eclipse/californium/core/server/resources/ResourceObserver.class
+rabbit-tutorial/classpath.txt

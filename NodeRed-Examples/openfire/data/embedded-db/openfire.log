@@ -1,0 +1,349 @@
+/*C2*/SET SCHEMA PUBLIC
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732135782369')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+DELETE FROM OFID WHERE IDTYPE=19
+INSERT INTO OFID VALUES(19,6)
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',1,'001732135784172',207,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/02d69d4f-c625-4796-8421-86f687057f09"><body>{ \"sensor\": \"temperature\", \"value\": $floor($random() * (35 - 15) + 15) }</body></message>')
+COMMIT
+INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732135843402')
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=1
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732135899889')
+COMMIT
+/*C3*/SET SCHEMA PUBLIC
+INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732135899889')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',2,'001732135899898',288,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/33c91fba-f746-4ac3-9ba2-35ec0b9fa132"><body>{ \"sensor\": \"temperature\", \"value\": $floor($random() * (35 - 15) + 15) }</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:50:50.727Z" from="localhost"/></message>')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',3,'001732135899900',288,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/33c91fba-f746-4ac3-9ba2-35ec0b9fa132"><body>{ \"sensor\": \"temperature\", \"value\": $floor($random() * (35 - 15) + 15) }</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:50:52.169Z" from="localhost"/></message>')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',4,'001732135899901',288,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/33c91fba-f746-4ac3-9ba2-35ec0b9fa132"><body>{ \"sensor\": \"temperature\", \"value\": $floor($random() * (35 - 15) + 15) }</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:50:53.768Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=2
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=3
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=4
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732135935343')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732135935344')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136046922')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136046924')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',5,'001732136046936',290,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/b2bac0bc-5320-47e4-b07e-201874dee0a2"><body>{     "sensor": "Temperature",     "value": $floor($random() * (35 - 15) + 15) }</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:53:13.018Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFID WHERE IDTYPE=19
+INSERT INTO OFID VALUES(19,11)
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',6,'001732136046939',290,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/b2bac0bc-5320-47e4-b07e-201874dee0a2"><body>{     "sensor": "Temperature",     "value": $floor($random() * (35 - 15) + 15) }</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:53:19.244Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=5
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=6
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136112803')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136112803')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',7,'001732136112824',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/d307f4c6-235c-428e-879c-226cf7c53128"><body>{"sensor":"Temperature","value":26}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:54:13.257Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=7
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136136091')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136136089')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',8,'001732136136096',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/d307f4c6-235c-428e-879c-226cf7c53128"><body>{"sensor":"Temperature","value":26}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:54:13.257Z" from="localhost"></delay></message>')
+COMMIT
+/*C2*/DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=8
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C3*/DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+DELETE FROM OFID WHERE IDTYPE=25
+INSERT INTO OFID VALUES(25,29)
+COMMIT
+INSERT INTO OFSECURITYAUDITLOG VALUES(28,'admin',1732136164206,'Successful admin console login attempt','localhost','The user logged in successfully to the admin console from address 172.30.0.1. ')
+COMMIT
+INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136180419')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136180420')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',9,'001732136180426',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/d307f4c6-235c-428e-879c-226cf7c53128"><body>{"sensor":"Temperature","value":26}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:54:13.257Z" from="localhost"></delay></message>')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',10,'001732136180427',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/9079a573-0604-4cda-b064-41c20f3701c9"><body>{"sensor":"Temperature","value":30}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:55:42.583Z" from="localhost"/></message>')
+COMMIT
+/*C3*/DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=9
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=10
+COMMIT
+/*C2*/DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C3*/DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136192809')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136192809')
+COMMIT
+/*C2*/DELETE FROM OFID WHERE IDTYPE=19
+INSERT INTO OFID VALUES(19,16)
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',11,'001732136192823',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/ee295a3d-edb5-419d-83f7-a3b58504c27a"><body>{"sensor":"Temperature","value":17}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:56:28.041Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=11
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136208032')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136208032')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',12,'001732136208037',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/ee295a3d-edb5-419d-83f7-a3b58504c27a"><body>{"sensor":"Temperature","value":17}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:56:28.041Z" from="localhost"></delay></message>')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',13,'001732136208039',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/517eb5bf-cb8e-49a7-98ce-c2659598b439"><body>{"sensor":"Temperature","value":15}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:56:36.135Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=12
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=13
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136225728')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136225735')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C3*/DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136260837')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136260841')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',14,'001732136260848',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/440ab106-0fe7-4f62-9167-1eec5a7d836b"><body>{"sensor":"Temperature","value":22}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:57:07.901Z" from="localhost"/></message>')
+COMMIT
+/*C2*/DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C3*/DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=14
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136284598')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136284598')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',15,'001732136284603',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/440ab106-0fe7-4f62-9167-1eec5a7d836b"><body>{"sensor":"Temperature","value":22}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:57:07.901Z" from="localhost"></delay></message>')
+COMMIT
+DELETE FROM OFID WHERE IDTYPE=19
+INSERT INTO OFID VALUES(19,21)
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',16,'001732136284605',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/97718e04-9826-4113-9b2a-f10d3f65ca8c"><body>{"sensor":"Temperature","value":25}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:57:42.552Z" from="localhost"/></message>')
+COMMIT
+/*C3*/DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C2*/DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=15
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=16
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136301143')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136301143')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',17,'001732136301153',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/440ab106-0fe7-4f62-9167-1eec5a7d836b"><body>{"sensor":"Temperature","value":22}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:57:07.901Z" from="localhost"></delay></message>')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',18,'001732136301157',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/97718e04-9826-4113-9b2a-f10d3f65ca8c"><body>{"sensor":"Temperature","value":25}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:57:42.552Z" from="localhost"></delay></message>')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C3*/DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=17
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=18
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136321822')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136321822')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C2*/DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136435491')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136435490')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',19,'001732136435500',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/de44512b-bbff-42be-85a7-850fbcccc07b"><body>{"sensor":"Temperature","value":27}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:58:43.708Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=19
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136476679')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136476679')
+COMMIT
+/*C3*/INSERT INTO OFOFFLINE VALUES('user1',20,'001732136476690',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/de44512b-bbff-42be-85a7-850fbcccc07b"><body>{"sensor":"Temperature","value":27}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T20:58:43.708Z" from="localhost"></delay></message>')
+COMMIT
+DELETE FROM OFID WHERE IDTYPE=19
+INSERT INTO OFID VALUES(19,26)
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',21,'001732136476693',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/fca3682d-cd52-4598-a9c6-47c568f4883d"><body>{"sensor":"Temperature","value":15}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:00:41.202Z" from="localhost"/></message>')
+COMMIT
+/*C2*/DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=20
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=21
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136528303')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136528303')
+COMMIT
+/*C3*/INSERT INTO OFOFFLINE VALUES('user1',22,'001732136528309',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/25ac4957-da4d-4eef-9a35-d05abbcc32f3"><body>{"sensor":"Temperature","value":22}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:01:51.603Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=22
+COMMIT
+/*C2*/DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136572851')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136572851')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',23,'001732136572855',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/25ac4957-da4d-4eef-9a35-d05abbcc32f3"><body>{"sensor":"Temperature","value":22}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:01:51.603Z" from="localhost"></delay></message>')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',24,'001732136572856',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/80fdf5d1-90a6-4c21-95fc-19586c0138ae"><body>{"sensor":"Temperature","value":22}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:02:13.847Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=23
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=24
+COMMIT
+/*C2*/DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136597409')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136597409')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',25,'001732136597412',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/cef25316-86b8-483d-b204-9c6e2af8e36a"><body>{"sensor":"Temperature","value":19}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:03:04.807Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFID WHERE IDTYPE=19
+INSERT INTO OFID VALUES(19,31)
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',26,'001732136597417',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/cef25316-86b8-483d-b204-9c6e2af8e36a"><body>{"sensor":"Temperature","value":24}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:03:08.200Z" from="localhost"/></message>')
+COMMIT
+/*C3*/DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=25
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=26
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136608252')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136608252')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',27,'001732136608256',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/cef25316-86b8-483d-b204-9c6e2af8e36a"><body>{"sensor":"Temperature","value":19}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:03:04.807Z" from="localhost"></delay></message>')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',28,'001732136608256',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/cef25316-86b8-483d-b204-9c6e2af8e36a"><body>{"sensor":"Temperature","value":24}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:03:08.200Z" from="localhost"></delay></message>')
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=27
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=28
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136619679')
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136619679')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C3*/DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136663720')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136663720')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',29,'001732136663728',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/e803100b-130e-49e1-9e37-83f59355f3fd"><body>{"sensor":"Temperature","value":19}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:03:42.665Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=29
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136689102')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136689102')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',30,'001732136689108',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/e803100b-130e-49e1-9e37-83f59355f3fd"><body>{"sensor":"Temperature","value":19}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:03:42.665Z" from="localhost"></delay></message>')
+COMMIT
+DELETE FROM OFID WHERE IDTYPE=19
+INSERT INTO OFID VALUES(19,36)
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',31,'001732136689110',245,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/1e330e2d-e5f5-40ad-8a12-b02f8cea60a7"><body>{"sensor":"Temperature","value":15}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:04:26.407Z" from="localhost"/></message>')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=30
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=31
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136711979')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136711979')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',32,'001732136711986',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/e803100b-130e-49e1-9e37-83f59355f3fd"><body>{"sensor":"Temperature","value":19}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:03:42.665Z" from="localhost"></delay></message>')
+COMMIT
+INSERT INTO OFOFFLINE VALUES('user1',33,'001732136711987',252,'<message type="chat" to="user1@localhost" from="iotdevice@localhost/1e330e2d-e5f5-40ad-8a12-b02f8cea60a7"><body>{"sensor":"Temperature","value":15}</body><delay xmlns="urn:xmpp:delay" stamp="2024-11-20T21:04:26.407Z" from="localhost"></delay></message>')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=32
+DELETE FROM OFOFFLINE WHERE USERNAME='user1' AND MESSAGEID=33
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT
+/*C2*/INSERT INTO OFPRESENCE VALUES('user1',NULL,'001732136726197')
+COMMIT
+/*C3*/INSERT INTO OFPRESENCE VALUES('iotdevice',NULL,'001732136726197')
+COMMIT
+DELETE FROM OFPRESENCE WHERE USERNAME='iotdevice'
+COMMIT
+/*C2*/DELETE FROM OFPRESENCE WHERE USERNAME='user1'
+COMMIT

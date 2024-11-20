@@ -39,6 +39,7 @@ services:
  #   volumes:
  #     - ./nodered/data:/data
 
+
   node-red:
     container_name: se4iot-node-red
     build:
@@ -57,6 +58,7 @@ services:
     volumes:
       - ./nodered-custom/data:/data
 
+
   mosquitto:
     container_name: se4iot-mosquitto
     image: eclipse-mosquitto
@@ -71,6 +73,7 @@ services:
     ports:
     - "1883:1883" 
 
+
   simplecoapserver:
     container_name: se4iot-simplecoapserver
     build:
@@ -82,6 +85,7 @@ services:
         ipv4_address: 172.30.0.102
     ports:
       - "5683:5683"
+
 
   simplecoapserver-remote:
     container_name: se4iot-simplecoapserver-remote
@@ -107,6 +111,7 @@ services:
       se4iot-network:
         ipv4_address: 172.30.0.104
 
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: se4iot-rabbitmq
@@ -120,9 +125,34 @@ services:
       se4iot-network:
         ipv4_address: 172.30.0.105
 
+
+  openfire:
+    container_name: se4iot-openfire
+    build:
+      context: ./openfire/
+      dockerfile: Dockerfile
+    ports:
+      - "9090:9090"
+      - "9091:9091"
+      - "5222:5222"
+      - "5269:5269"
+    networks:
+      se4iot-network:
+        ipv4_address: 172.30.0.106
+    volumes:
+      - ./openfire/data/conf:/opt/openfire/conf
+  #    - ./openfire/data/logs:/opt/openfire/logs
+      - ./openfire/data/embedded-db:/opt/openfire/embedded-db
+      - ./openfire/data/resources:/opt/openfire/resources
+  #    - ./openfire/data/plugins:/opt/openfire/plugins
+    hostname: localhost 
+    restart: unless-stopped
+
+
 networks:
   se4iot-network:
     driver: bridge
     ipam:
       config:
         - subnet: 172.30.0.0/16
+

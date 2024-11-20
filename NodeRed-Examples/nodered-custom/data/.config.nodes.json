@@ -791,5 +791,26 @@
                 "file": "/data/node_modules/@meowwolf/node-red-contrib-amqp/build/src/nodes/amqp-in-manual-ack.js"
             }
         }
+    },
+    "node-red-node-xmpp": {
+        "name": "node-red-node-xmpp",
+        "version": "0.6.3",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "xmpp": {
+                "name": "xmpp",
+                "types": [
+                    "xmpp in",
+                    "xmpp out",
+                    "xmpp-server"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-xmpp",
+                "file": "/data/node_modules/node-red-node-xmpp/92-xmpp.js"
+            }
+        }
     }
 }

@@ -1,0 +1,8 @@
+2024.11.20 18:48:03.974 [32mINFO [m [main]: org.jivesoftware.openfire.XMPPServer - Registering shutdown hook (standalone mode)
+2024.11.20 18:48:05.683 [32mINFO [m [main]: org.jivesoftware.util.cache.ConsistencyMonitor - Applying configuration for cache consistency check. Enabled: false
+2024.11.20 18:48:05.796 [32mINFO [m [main]: org.jivesoftware.openfire.XMPPServer - Openfire 4.9.2 [Nov 20, 2024, 6:48:05 PM]
+2024.11.20 18:48:06.483 [33mWARN [m [PluginMonitorTask-2]: org.jivesoftware.openfire.container.AdminConsolePlugin - Admin console: CertificateStoreManager has not been initialized yet. HTTPS will be unavailable.
+2024.11.20 18:48:09.889 [32mINFO [m [PluginMonitorTask-2]: org.jivesoftware.util.cache.CacheFactory - Created cache [org.jivesoftware.util.cache.DefaultLocalCacheStrategy] for Favicon Misses
+2024.11.20 18:48:09.890 [32mINFO [m [PluginMonitorTask-2]: org.jivesoftware.util.cache.CacheFactory - Created cache [org.jivesoftware.util.cache.DefaultLocalCacheStrategy] for Favicon Hits
+2024.11.20 18:48:09.955 [32mINFO [m [PluginMonitorTask-2]: org.jivesoftware.openfire.container.AdminConsolePlugin - Admin console listening at http://e802a8fb7021:9090
+2024.11.20 18:48:09.958 [32mINFO [m [PluginMonitorTask-2]: org.jivesoftware.openfire.container.PluginManager - Successfully loaded plugin 'admin'.

@@ -24,6 +24,14 @@
         "env": []
     },
     {
+        "id": "640a2d7df9180b0e",
+        "type": "tab",
+        "label": "XMPP with Openfire",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "9bfc2b6b.d09d68",
         "type": "tab",
         "label": "influxdb",
@@ -62,7 +70,7 @@
     {
         "id": "0648859e6711c8f9",
         "type": "ui_tab",
-        "name": "MQTT and COAP Sensors",
+        "name": "Sensors",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
@@ -186,140 +194,10 @@
         "charset": ""
     },
     {
-        "id": "ab3060f4c7e96482",
-        "type": "coap-server",
-        "name": "Hello CoAP Server",
-        "port": "5683",
-        "ipv6": false
-    },
-    {
         "id": "e38ada7c23eea3a7",
         "type": "global-config",
         "name": "global-config",
         "env": []
-    },
-    {
-        "id": "65f5f7c7.2e135",
-        "type": "mqtt-broker",
-        "name": "MyBroker",
-        "broker": "vps.diruscio.org",
-        "port": "3004",
-        "clientid": "/#",
-        "autoConnect": true,
-        "usetls": false,
-        "compatmode": false,
-        "protocolVersion": 4,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "caebf959.f8cb8",
-        "type": "ui_tab",
-        "name": "Temperature",
-        "icon": "fa-thermometer-empty",
-        "order": 2,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "181468e4.de28b7",
-        "type": "ui_tab",
-        "name": "Allarme",
-        "icon": "fa-shield",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "76e7315.6625f5",
-        "type": "ui_group",
-        "name": "Temperature",
-        "tab": "caebf959.f8cb8",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "15aeb36c.906bdd",
-        "type": "ui_group",
-        "name": "Allarme",
-        "tab": "181468e4.de28b7",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "194d5021.25ef1",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "order": 4,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "24f8c1.9605d74",
-        "type": "ui_group",
-        "name": "Live temperatures",
-        "tab": "194d5021.25ef1",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "b8e42db6.e8a4",
-        "type": "mqtt-broker",
-        "name": "LocalBroker",
-        "broker": "95.110.171.28",
-        "port": "1883",
-        "clientid": "streetscience",
-        "autoConnect": true,
-        "usetls": false,
-        "compatmode": false,
-        "protocolVersion": 4,
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "de1b7a67.fbcd58",
-        "type": "ui_tab",
-        "name": "Giardino",
-        "icon": "fa-tint",
-        "order": 3,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "58bf1d0.2d285e4",
-        "type": "ui_group",
-        "name": "Irrigazione",
-        "tab": "de1b7a67.fbcd58",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
     },
     {
         "id": "4e53f268.aaddbc",
@@ -341,17 +219,6 @@
         "hidden": false
     },
     {
-        "id": "bca5bfed.6fcc5",
-        "type": "ui_group",
-        "name": "StreetScience",
-        "tab": "95d17d8a.8e1d8",
-        "order": 5,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "212c1de1.ea67e2",
         "type": "ui_spacer",
         "d": true,
@@ -360,36 +227,6 @@
         "order": 1,
         "width": 1,
         "height": 1
-    },
-    {
-        "id": "8e11387e.560328",
-        "type": "ui_group",
-        "name": "Sensori temperatura",
-        "tab": "95d17d8a.8e1d8",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "5ca9149d.f7a16c",
-        "type": "ui_group",
-        "name": "Sensori umidità",
-        "tab": "95d17d8a.8e1d8",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "d7997924.955538",
-        "type": "ui_group",
-        "name": "Sensore luminosità",
-        "tab": "95d17d8a.8e1d8",
-        "order": 4,
-        "disp": true,
-        "width": "6",
-        "collapse": false
     },
     {
         "id": "dfafb391.8a17d",
@@ -447,14 +284,22 @@
         "credsFromSettings": false
     },
     {
-        "id": "0d008365d3db8fc6",
-        "type": "amqp-broker",
-        "name": "RabbitMQ Server",
-        "host": "host.docker.internal",
-        "port": "5672",
-        "vhost": "/",
-        "tls": false,
-        "credsFromSettings": false
+        "id": "871d61513e7d43b7",
+        "type": "xmpp-server",
+        "server": "172.30.0.106",
+        "port": "5222",
+        "user": "iotdevice@localhost",
+        "nickname": "",
+        "resource": ""
+    },
+    {
+        "id": "cf4990a12f77867e",
+        "type": "xmpp-server",
+        "server": "172.30.0.106",
+        "port": "5222",
+        "user": "user1@localhost",
+        "nickname": "",
+        "resource": ""
     },
     {
         "id": "9a9785a72c57e268",
@@ -1909,6 +1754,144 @@
         ]
     },
     {
+        "id": "dc9fe94120d75cfc",
+        "type": "comment",
+        "z": "4d50d5059e3124c8",
+        "name": "Two Queues Bound to the Same Routing Key",
+        "info": "",
+        "x": 550,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "inject-temperature",
+        "type": "inject",
+        "z": "4d50d5059e3124c8",
+        "name": "Send Temperature Data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "routingKey",
+                "v": "sensor.temperature",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "{ \"sensor\": \"temperature\", \"value\": $floor($random() * (35 - 15) + 15) }",
+        "payloadType": "jsonata",
+        "x": 580,
+        "y": 1700,
+        "wires": [
+            [
+                "amqp-out-node"
+            ]
+        ]
+    },
+    {
+        "id": "amqp-out-node",
+        "type": "amqp-out",
+        "z": "4d50d5059e3124c8",
+        "name": "Publish to Exchange",
+        "broker": "f373fb80f9b86423",
+        "exchangeName": "direct_exchange",
+        "exchangeType": "direct",
+        "exchangeRoutingKey": "sensor.temperature",
+        "exchangeRoutingKeyType": "str",
+        "exchangeDurable": true,
+        "amqpProperties": "{}",
+        "rpcTimeoutMilliseconds": 3000,
+        "outputs": 0,
+        "x": 880,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "amqp-in-queue1",
+        "type": "amqp-in",
+        "z": "4d50d5059e3124c8",
+        "name": "Queue1 (Temperature)",
+        "broker": "f373fb80f9b86423",
+        "prefetch": 0,
+        "noAck": true,
+        "exchangeName": "direct_exchange",
+        "exchangeType": "direct",
+        "exchangeRoutingKey": "sensor.temperature",
+        "exchangeDurable": true,
+        "queueName": "queue1",
+        "queueExclusive": false,
+        "queueDurable": true,
+        "queueAutoDelete": false,
+        "headers": "{}",
+        "x": 580,
+        "y": 1820,
+        "wires": [
+            [
+                "debug-queue1"
+            ]
+        ]
+    },
+    {
+        "id": "amqp-in-queue2",
+        "type": "amqp-in",
+        "z": "4d50d5059e3124c8",
+        "name": "Queue2 (Temperature)",
+        "broker": "f373fb80f9b86423",
+        "prefetch": 0,
+        "noAck": true,
+        "exchangeName": "direct_exchange",
+        "exchangeType": "direct",
+        "exchangeRoutingKey": "sensor.temperature",
+        "exchangeDurable": true,
+        "queueName": "queue2",
+        "queueExclusive": false,
+        "queueDurable": true,
+        "queueAutoDelete": false,
+        "headers": "{}",
+        "x": 580,
+        "y": 1940,
+        "wires": [
+            [
+                "debug-queue2"
+            ]
+        ]
+    },
+    {
+        "id": "debug-queue1",
+        "type": "debug",
+        "z": "4d50d5059e3124c8",
+        "name": "Queue1 Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 880,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "debug-queue2",
+        "type": "debug",
+        "z": "4d50d5059e3124c8",
+        "name": "Queue2 Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 880,
+        "y": 1940,
+        "wires": []
+    },
+    {
         "id": "0a12fdca8c704c25",
         "type": "inject",
         "z": "e7073b8a36296641",
@@ -2001,7 +1984,7 @@
         "wires": [
             [
                 "6682dcb39d414286",
-                "a3f855a3d4e3808c"
+                "f216dc2dbe469017"
             ]
         ]
     },
@@ -2137,7 +2120,7 @@
         "wires": []
     },
     {
-        "id": "a3f855a3d4e3808c",
+        "id": "f216dc2dbe469017",
         "type": "function",
         "z": "e7073b8a36296641",
         "name": "getTemperature",
@@ -2148,11 +2131,147 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1140,
-        "y": 280,
+        "x": 1080,
+        "y": 300,
         "wires": [
             [
                 "200f4c0202b65ae2"
+            ]
+        ]
+    },
+    {
+        "id": "inject1",
+        "type": "inject",
+        "z": "640a2d7df9180b0e",
+        "name": "Test Message",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{     \"sensor\": \"Temperature\",     \"value\": $floor($random() * (35 - 15) + 15) }",
+        "payloadType": "jsonata",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "xmpp-out"
+            ]
+        ]
+    },
+    {
+        "id": "xmpp-out",
+        "type": "xmpp out",
+        "z": "640a2d7df9180b0e",
+        "name": "Send Test Message",
+        "server": "871d61513e7d43b7",
+        "to": "user1@localhost",
+        "join": false,
+        "sendObject": false,
+        "x": 450,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d7641995052d7ed8",
+        "type": "xmpp in",
+        "z": "640a2d7df9180b0e",
+        "name": "",
+        "server": "cf4990a12f77867e",
+        "to": "",
+        "join": false,
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "d7c9fbadd0e763e3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9ca16024ae1d3c96",
+        "type": "ui_gauge",
+        "z": "640a2d7df9180b0e",
+        "name": "",
+        "group": "40213cc014bd0905",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "XMPP",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 870,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "fded66f5637319d6",
+        "type": "debug",
+        "z": "640a2d7df9180b0e",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "d7c9fbadd0e763e3",
+        "type": "json",
+        "z": "640a2d7df9180b0e",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 330,
+        "y": 440,
+        "wires": [
+            [
+                "dd92ab506d57ca19"
+            ]
+        ]
+    },
+    {
+        "id": "dd92ab506d57ca19",
+        "type": "function",
+        "z": "640a2d7df9180b0e",
+        "name": "function 1",
+        "func": "msg.payload = msg.payload.value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 400,
+        "wires": [
+            [
+                "9ca16024ae1d3c96",
+                "fded66f5637319d6"
             ]
         ]
     },

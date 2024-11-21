@@ -291,24 +291,6 @@
         "credsFromSettings": false
     },
     {
-        "id": "871d61513e7d43b7",
-        "type": "xmpp-server",
-        "server": "172.30.0.106",
-        "port": "5222",
-        "user": "iotdevice@localhost",
-        "nickname": "",
-        "resource": ""
-    },
-    {
-        "id": "cf4990a12f77867e",
-        "type": "xmpp-server",
-        "server": "172.30.0.106",
-        "port": "5222",
-        "user": "user1@localhost",
-        "nickname": "",
-        "resource": ""
-    },
-    {
         "id": "ui-group",
         "type": "ui_group",
         "name": "Default",
@@ -333,6 +315,24 @@
         "host": "host.docker.internal",
         "port": "3306",
         "db": "IoTData"
+    },
+    {
+        "id": "09e52ac0d5efe734",
+        "type": "xmpp-server",
+        "server": "172.30.0.106",
+        "port": "5222",
+        "user": "iotdevice@localhost",
+        "nickname": "",
+        "resource": ""
+    },
+    {
+        "id": "5dbcf5dfa2242593",
+        "type": "xmpp-server",
+        "server": "172.30.0.106",
+        "port": "5222",
+        "user": "user1",
+        "nickname": "",
+        "resource": ""
     },
     {
         "id": "9a9785a72c57e268",
@@ -2193,38 +2193,8 @@
         "y": 160,
         "wires": [
             [
-                "xmpp-out"
+                "07bcaff9004443ca"
             ]
-        ]
-    },
-    {
-        "id": "xmpp-out",
-        "type": "xmpp out",
-        "z": "640a2d7df9180b0e",
-        "name": "Send Temperature",
-        "server": "871d61513e7d43b7",
-        "to": "user1@localhost",
-        "join": false,
-        "sendObject": false,
-        "x": 530,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "d7641995052d7ed8",
-        "type": "xmpp in",
-        "z": "640a2d7df9180b0e",
-        "name": "Get Temperature",
-        "server": "cf4990a12f77867e",
-        "to": "",
-        "join": false,
-        "x": 180,
-        "y": 440,
-        "wires": [
-            [
-                "d7c9fbadd0e763e3"
-            ],
-            []
         ]
     },
     {
@@ -2307,6 +2277,36 @@
                 "fded66f5637319d6"
             ]
         ]
+    },
+    {
+        "id": "b0f3f49c26a48c9e",
+        "type": "xmpp in",
+        "z": "640a2d7df9180b0e",
+        "name": "",
+        "server": "5dbcf5dfa2242593",
+        "to": "",
+        "join": false,
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "d7c9fbadd0e763e3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "07bcaff9004443ca",
+        "type": "xmpp out",
+        "z": "640a2d7df9180b0e",
+        "name": "",
+        "server": "09e52ac0d5efe734",
+        "to": "user1@localhost",
+        "join": false,
+        "sendObject": false,
+        "x": 390,
+        "y": 160,
+        "wires": []
     },
     {
         "id": "64a0c6b6.128d78",

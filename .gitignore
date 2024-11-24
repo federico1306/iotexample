@@ -14,7 +14,7 @@ it.univaq.disim.se4iot.mqtt/target/classes/*
 .vscode/settings.json
 NodeRed-Examples/.vscode/settings.json
 
-it.univaq.disim.se4iot.coap.livingroom/bin/*.class
-it.univaq.disim.se4iot.coap.homeclient/bin/*.class
+it.univaq.disim.se4iot.coap.livingroom/*.class
+it.univaq.disim.se4iot.coap.homeclient/*.class
 rabbit-tutorial/classpath.txt
 

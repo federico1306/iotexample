@@ -24,6 +24,13 @@
         "env": []
     },
     {
+        "id": "b2f1ec0b798e1b36",
+        "type": "tab",
+        "label": "RabbitMQ IoTExchange",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "640a2d7df9180b0e",
         "type": "tab",
         "label": "XMPP with Openfire",
@@ -35,13 +42,6 @@
         "id": "9bfc2b6b.d09d68",
         "type": "tab",
         "label": "influxdb",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "b2f1ec0b798e1b36",
-        "type": "tab",
-        "label": "RabbitMQ IoTExchange",
         "disabled": false,
         "info": ""
     },
@@ -247,6 +247,7 @@
         "tls": "",
         "influxdbVersion": "2.0",
         "url": "http://host.docker.internal:8086",
+        "timeout": "",
         "rejectUnauthorized": true
     },
     {
@@ -2173,6 +2174,218 @@
         ]
     },
     {
+        "id": "sensor1",
+        "type": "inject",
+        "z": "b2f1ec0b798e1b36",
+        "name": "Simulate Sensor Data",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "{ \"sensor\": \"temperature\", \"value\": $floor($random() * (35 - 15) + 15) }",
+        "payloadType": "jsonata",
+        "x": 200,
+        "y": 160,
+        "wires": [
+            [
+                "process-alerts"
+            ]
+        ]
+    },
+    {
+        "id": "process-alerts",
+        "type": "function",
+        "z": "b2f1ec0b798e1b36",
+        "name": "Process Alerts",
+        "func": "var alertMsg = null;\nvar okMsg = msg.payload;\n\n// Threshold for temperature\nif (msg.payload.sensor === \"temperature\" && msg.payload.value > 30) {\n    alertMsg = {\n        payload: {\n            sensor: msg.payload.sensor,\n            value: msg.payload.value,\n            alert: \"High Temperature Alert\"\n        }\n    };\n} else {\n    alertMsg = {\n        payload: {\n            sensor: msg.payload.sensor,\n            value: msg.payload.value,\n            alert: \"No Alerts\"\n        }\n    };\n}\n\nreturn alertMsg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "publish-to-rabbitmq",
+                "debug-payload"
+            ]
+        ]
+    },
+    {
+        "id": "publish-to-rabbitmq",
+        "type": "amqp-out",
+        "z": "b2f1ec0b798e1b36",
+        "name": "Publish to IoTExchange",
+        "broker": "f373fb80f9b86423",
+        "exchangeName": "IoTExchange",
+        "exchangeType": "fanout",
+        "exchangeRoutingKey": "",
+        "exchangeRoutingKeyType": "str",
+        "exchangeDurable": true,
+        "amqpProperties": "{}",
+        "rpcTimeoutMilliseconds": 3000,
+        "outputs": 0,
+        "x": 720,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "subscribe-from-rabbitmq",
+        "type": "amqp-in",
+        "z": "b2f1ec0b798e1b36",
+        "name": "Subscribe to IoTExchange",
+        "broker": "f373fb80f9b86423",
+        "prefetch": 0,
+        "noAck": true,
+        "exchangeName": "IoTExchange",
+        "exchangeType": "fanout",
+        "exchangeRoutingKey": "",
+        "exchangeDurable": true,
+        "queueName": "IoTQueue",
+        "queueExclusive": false,
+        "queueDurable": true,
+        "queueAutoDelete": false,
+        "headers": "{}",
+        "x": 590,
+        "y": 480,
+        "wires": [
+            [
+                "debug-received",
+                "c2ceb6c025128e1e",
+                "65dc7eb6cb210188"
+            ]
+        ]
+    },
+    {
+        "id": "debug-payload",
+        "type": "debug",
+        "z": "b2f1ec0b798e1b36",
+        "name": "Debug Published Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "debug-received",
+        "type": "debug",
+        "z": "b2f1ec0b798e1b36",
+        "name": "Debug Received Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "display-data",
+        "type": "ui_gauge",
+        "z": "b2f1ec0b798e1b36",
+        "name": "Temperature Gauge",
+        "group": "ui-group",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1220,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c2ceb6c025128e1e",
+        "type": "function",
+        "z": "b2f1ec0b798e1b36",
+        "name": "getTemperature",
+        "func": "msg.payload = msg.payload.value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 320,
+        "wires": [
+            [
+                "display-data"
+            ]
+        ]
+    },
+    {
+        "id": "5b8cea04b02820e5",
+        "type": "ui_text",
+        "z": "b2f1ec0b798e1b36",
+        "group": "ui-group",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Message",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1200,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "65dc7eb6cb210188",
+        "type": "function",
+        "z": "b2f1ec0b798e1b36",
+        "name": "getAlert",
+        "func": "msg.payload = msg.payload.alert;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 380,
+        "wires": [
+            [
+                "5b8cea04b02820e5"
+            ]
+        ]
+    },
+    {
         "id": "inject1",
         "type": "inject",
         "z": "640a2d7df9180b0e",
@@ -2463,217 +2676,5 @@
         "x": 600,
         "y": 380,
         "wires": []
-    },
-    {
-        "id": "sensor1",
-        "type": "inject",
-        "z": "b2f1ec0b798e1b36",
-        "name": "Simulate Sensor Data",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "",
-        "payload": "{ \"sensor\": \"temperature\", \"value\": $floor($random() * (35 - 15) + 15) }",
-        "payloadType": "jsonata",
-        "x": 200,
-        "y": 160,
-        "wires": [
-            [
-                "process-alerts"
-            ]
-        ]
-    },
-    {
-        "id": "process-alerts",
-        "type": "function",
-        "z": "b2f1ec0b798e1b36",
-        "name": "Process Alerts",
-        "func": "var alertMsg = null;\nvar okMsg = msg.payload;\n\n// Threshold for temperature\nif (msg.payload.sensor === \"temperature\" && msg.payload.value > 30) {\n    alertMsg = {\n        payload: {\n            sensor: msg.payload.sensor,\n            value: msg.payload.value,\n            alert: \"High Temperature Alert\"\n        }\n    };\n} else {\n    alertMsg = {\n        payload: {\n            sensor: msg.payload.sensor,\n            value: msg.payload.value,\n            alert: \"No Alerts\"\n        }\n    };\n}\n\nreturn alertMsg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 160,
-        "wires": [
-            [
-                "publish-to-rabbitmq",
-                "debug-payload"
-            ]
-        ]
-    },
-    {
-        "id": "publish-to-rabbitmq",
-        "type": "amqp-out",
-        "z": "b2f1ec0b798e1b36",
-        "name": "Publish to IoTExchange",
-        "broker": "f373fb80f9b86423",
-        "exchangeName": "IoTExchange",
-        "exchangeType": "fanout",
-        "exchangeRoutingKey": "",
-        "exchangeRoutingKeyType": "str",
-        "exchangeDurable": true,
-        "amqpProperties": "{}",
-        "rpcTimeoutMilliseconds": 3000,
-        "outputs": 0,
-        "x": 720,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "subscribe-from-rabbitmq",
-        "type": "amqp-in",
-        "z": "b2f1ec0b798e1b36",
-        "name": "Subscribe to IoTExchange",
-        "broker": "f373fb80f9b86423",
-        "prefetch": 0,
-        "noAck": true,
-        "exchangeName": "IoTExchange",
-        "exchangeType": "fanout",
-        "exchangeRoutingKey": "",
-        "exchangeDurable": true,
-        "queueName": "IoTQueue",
-        "queueExclusive": false,
-        "queueDurable": true,
-        "queueAutoDelete": false,
-        "headers": "{}",
-        "x": 590,
-        "y": 480,
-        "wires": [
-            [
-                "debug-received",
-                "c2ceb6c025128e1e",
-                "65dc7eb6cb210188"
-            ]
-        ]
-    },
-    {
-        "id": "debug-payload",
-        "type": "debug",
-        "z": "b2f1ec0b798e1b36",
-        "name": "Debug Published Data",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 950,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "debug-received",
-        "type": "debug",
-        "z": "b2f1ec0b798e1b36",
-        "name": "Debug Received Data",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1020,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "display-data",
-        "type": "ui_gauge",
-        "z": "b2f1ec0b798e1b36",
-        "name": "Temperature Gauge",
-        "group": "ui-group",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Temperature",
-        "label": "°C",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "50",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 1220,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "c2ceb6c025128e1e",
-        "type": "function",
-        "z": "b2f1ec0b798e1b36",
-        "name": "getTemperature",
-        "func": "msg.payload = msg.payload.value;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 320,
-        "wires": [
-            [
-                "display-data"
-            ]
-        ]
-    },
-    {
-        "id": "5b8cea04b02820e5",
-        "type": "ui_text",
-        "z": "b2f1ec0b798e1b36",
-        "group": "ui-group",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Message",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 1200,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "65dc7eb6cb210188",
-        "type": "function",
-        "z": "b2f1ec0b798e1b36",
-        "name": "getAlert",
-        "func": "msg.payload = msg.payload.alert;\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 900,
-        "y": 380,
-        "wires": [
-            [
-                "5b8cea04b02820e5"
-            ]
-        ]
     }
 ]

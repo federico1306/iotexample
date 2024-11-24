@@ -17,17 +17,17 @@ public class InfluxDB2Example {
   public static void main(final String[] args) {
 
 	    // You can generate a Token from the "Tokens Tab" in the UI
-	    String token = "qwgNARIwfSw8BfhLvXjwtH4p010b9uB4tD6SesDp0UD5rYJ7RMKQwjAsWxVpJkCotYQ3KShsksTXbV7aC4A5ZA==";
-	    String bucket = "SE4IOT-demo-bucket";
-	    String org = "local-org";
+	    String token = "5LW7B-5ySei2kPoLtPIwBFS0KfK-uAcnxYE04BoJhalwdzQjvRz5zi7bELcTNw_WDkfCUkJiDd-wvIIDvnYHjQ==";
+	    String bucket = "se4iot";
+	    String org = "univaq";
 
 	    InfluxDBClient client = InfluxDBClientFactory.create("http://localhost:8086", token.toCharArray());
 
 	  Point point = Point
 			  .measurement("powerconsumption")
-			  .addTag("device", "device1")
-			  .addTag("client", "Java")
-			  .addField("power", 600)
+			  .addTag("device", "device3")
+			  .addTag("host", "MyHost2")
+			  .addField("power", 300)
 			  .time(Instant.now(), WritePrecision.NS);
 	
 			try (WriteApi writeApi = client.getWriteApi()) {

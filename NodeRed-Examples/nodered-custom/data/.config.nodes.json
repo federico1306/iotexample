@@ -1,7 +1,7 @@
 {
     "node-red": {
         "name": "node-red",
-        "version": "4.0.5",
+        "version": "4.1.2",
         "local": false,
         "user": false,
         "nodes": {
@@ -461,7 +461,7 @@
     },
     "node-red-dashboard": {
         "name": "node-red-dashboard",
-        "version": "3.6.5",
+        "version": "3.6.6",
         "local": false,
         "user": false,
         "nodes": {
@@ -810,6 +810,31 @@
                 "user": false,
                 "module": "node-red-node-xmpp",
                 "file": "/usr/src/node-red/node_modules/node-red-node-xmpp/92-xmpp.js"
+            }
+        }
+    },
+    "node-red-contrib-telegrambot": {
+        "name": "node-red-contrib-telegrambot",
+        "version": "17.0.3",
+        "local": false,
+        "user": false,
+        "nodes": {
+            "telegrambot": {
+                "name": "telegrambot",
+                "types": [
+                    "telegram bot",
+                    "telegram receiver",
+                    "telegram command",
+                    "telegram event",
+                    "telegram sender",
+                    "telegram reply",
+                    "telegram control"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-red-contrib-telegrambot",
+                "file": "/usr/src/node-red/node_modules/node-red-contrib-telegrambot/telegrambot/99-telegrambot.js"
             }
         }
     }

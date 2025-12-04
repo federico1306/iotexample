@@ -39,11 +39,92 @@
         "env": []
     },
     {
+        "id": "c0f76c1bba3e54fe",
+        "type": "tab",
+        "label": "Telegram BOT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "9bfc2b6b.d09d68",
         "type": "tab",
         "label": "influxdb",
         "disabled": false,
         "info": ""
+    },
+    {
+        "id": "8bf9f66cbbdb9c5d",
+        "type": "tab",
+        "label": "Recent Quakes",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "f4e5f505197bfb40",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "2e6f27de0323236f",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "580a9e1e359fcac7",
+        "type": "tab",
+        "label": "google home",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2a33ce0fad1432b1",
+        "type": "tab",
+        "label": "influxdb",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "5d42170d114bba9f",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "b1e2318ee086c39f",
+        "type": "tab",
+        "label": "StreetScience",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "dec9e6a9212ea5d6",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "58d1129b2260e717",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "45bb953573614f38",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
     },
     {
         "id": "a928ba0.2d1f748",
@@ -203,18 +284,13 @@
     {
         "id": "e38ada7c23eea3a7",
         "type": "global-config",
-        "name": "global-config",
-        "env": []
-    },
-    {
-        "id": "4e53f268.aaddbc",
-        "type": "ui_group",
-        "name": "LUCI",
-        "tab": "95d17d8a.8e1d8",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
+        "env": [
+            {
+                "name": "BOT_TOKEN",
+                "value": "TELEGRAM_TOKEN",
+                "type": "env"
+            }
+        ]
     },
     {
         "id": "95d17d8a.8e1d8",
@@ -224,16 +300,6 @@
         "order": 5,
         "disabled": false,
         "hidden": false
-    },
-    {
-        "id": "212c1de1.ea67e2",
-        "type": "ui_spacer",
-        "d": true,
-        "name": "spacer",
-        "group": "4e53f268.aaddbc",
-        "order": 1,
-        "width": 1,
-        "height": 1
     },
     {
         "id": "dfafb391.8a17d",
@@ -292,30 +358,12 @@
         "credsFromSettings": false
     },
     {
-        "id": "ui-group",
-        "type": "ui_group",
-        "name": "Default",
-        "tab": "ui-tab",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
         "id": "ui-tab",
         "type": "ui_tab",
         "name": "IoT Dashboard",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
-    },
-    {
-        "id": "mysql-config",
-        "type": "MySQLdatabase",
-        "name": "MySQL",
-        "host": "host.docker.internal",
-        "port": "3306",
-        "db": "IoTData"
     },
     {
         "id": "09e52ac0d5efe734",
@@ -334,6 +382,239 @@
         "user": "user1",
         "nickname": "",
         "resource": ""
+    },
+    {
+        "id": "4e53f268.aaddbc",
+        "type": "ui_group",
+        "name": "LUCI",
+        "tab": "95d17d8a.8e1d8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "212c1de1.ea67e2",
+        "type": "ui_spacer",
+        "d": true,
+        "name": "spacer",
+        "group": "4e53f268.aaddbc",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ui-group",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "ui-tab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ae207a1f66bab975",
+        "type": "ui_tab",
+        "name": "Temperature",
+        "icon": "fa-thermometer-empty",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5db292ecef9e0060",
+        "type": "ui_tab",
+        "name": "Allarme",
+        "icon": "fa-shield",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ba832ad665e82337",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "ae207a1f66bab975",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "57ee7f728ffc9556",
+        "type": "ui_group",
+        "name": "Allarme",
+        "tab": "5db292ecef9e0060",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b6a8d8d28f487f47",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "0dd55aaae3ba3af1",
+        "type": "ui_group",
+        "name": "Live temperatures",
+        "tab": "b6a8d8d28f487f47",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e4853f265cb7b2ab",
+        "type": "ui_tab",
+        "name": "Giardino",
+        "icon": "fa-tint",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "961338c0cb75a80b",
+        "type": "ui_group",
+        "name": "Irrigazione",
+        "tab": "e4853f265cb7b2ab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7aab449204af3ced",
+        "type": "ui_group",
+        "name": "Sensori temperatura",
+        "tab": "95d17d8a.8e1d8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "6f013033ac697967",
+        "type": "ui_group",
+        "name": "Sensori umidità",
+        "tab": "95d17d8a.8e1d8",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "94c81f8fb8733e6a",
+        "type": "ui_group",
+        "name": "Sensore luminosità",
+        "tab": "95d17d8a.8e1d8",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a7861378b88078da",
+        "type": "ui_tab",
+        "name": "Coap Sensor",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ec6d068c75e9a24b",
+        "type": "ui_group",
+        "name": "Coap Demo",
+        "tab": "a7861378b88078da",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "12fb50c2f32ee7db",
+        "type": "xmpp-server",
+        "server": "172.30.0.106",
+        "port": 5222,
+        "user": "user2",
+        "nickname": "",
+        "resource": ""
+    },
+    {
+        "id": "ed3fefd0ba28d00c",
+        "type": "telegram bot",
+        "botname": "SE4IOT_BOT",
+        "usernames": "",
+        "chatids": "6345974336",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "662fd1abba56a419",
+        "type": "telegram bot",
+        "botname": "SE4IOT_BOT",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "addressfamily": "",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "edf1038d908d0e6f",
+        "type": "influxdb",
+        "hostname": "172.30.0.102",
+        "port": "8086",
+        "protocol": "http",
+        "database": "forestsensors",
+        "name": "IoT_Influx",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://172.30.0.102:8086",
+        "rejectUnauthorized": true
     },
     {
         "id": "9a9785a72c57e268",
@@ -516,7 +797,7 @@
         "z": "9e5230c8d38af4ce",
         "name": "",
         "props": [],
-        "repeat": "",
+        "repeat": "5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -535,7 +816,7 @@
         "z": "9e5230c8d38af4ce",
         "name": "",
         "props": [],
-        "repeat": "",
+        "repeat": "3",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -556,6 +837,7 @@
         "name": "GET LAST MQTT 1 VALUE",
         "func": "msg.topic = \"select value FROM Temperature WHERE sensor = 'MQTT Sensor 1' ORDER BY id  DESC limit 1\"\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -2395,14 +2677,14 @@
                 "p": "payload"
             }
         ],
-        "repeat": "",
+        "repeat": "1",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "{     \"sensor\": \"Temperature\",     \"value\": $floor($random() * (35 - 15) + 15) }",
         "payloadType": "jsonata",
-        "x": 110,
+        "x": 120,
         "y": 160,
         "wires": [
             [
@@ -2487,7 +2769,8 @@
         "wires": [
             [
                 "9ca16024ae1d3c96",
-                "fded66f5637319d6"
+                "fded66f5637319d6",
+                "8c5d85d15475eca6"
             ]
         ]
     },
@@ -2514,12 +2797,261 @@
         "z": "640a2d7df9180b0e",
         "name": "",
         "server": "09e52ac0d5efe734",
-        "to": "user1@localhost",
+        "to": "user2@localhost",
         "join": false,
         "sendObject": false,
         "x": 390,
         "y": 160,
         "wires": []
+    },
+    {
+        "id": "283bc1034424b7ac",
+        "type": "debug",
+        "z": "640a2d7df9180b0e",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "57cda7699c75e8e6",
+        "type": "xmpp in",
+        "z": "640a2d7df9180b0e",
+        "name": "",
+        "server": "12fb50c2f32ee7db",
+        "to": "",
+        "join": false,
+        "x": 150,
+        "y": 520,
+        "wires": [
+            [
+                "283bc1034424b7ac"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "460ff46b2fbadde7",
+        "type": "change",
+        "z": "640a2d7df9180b0e",
+        "name": "Add Telegram parameters",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.username",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "6345974336",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "\"TEMPERATURE ALERT\"",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 660,
+        "wires": [
+            [
+                "1168f1782d5c6662"
+            ]
+        ]
+    },
+    {
+        "id": "1168f1782d5c6662",
+        "type": "telegram sender",
+        "z": "640a2d7df9180b0e",
+        "name": "Send to Telegram",
+        "bot": "ed3fefd0ba28d00c",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1170,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8c5d85d15475eca6",
+        "type": "switch",
+        "z": "640a2d7df9180b0e",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "15",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 710,
+        "y": 580,
+        "wires": [
+            [
+                "460ff46b2fbadde7"
+            ]
+        ]
+    },
+    {
+        "id": "f5da82dd116c565f",
+        "type": "inject",
+        "z": "640a2d7df9180b0e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "payload.type",
+                "v": "message",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 680,
+        "wires": [
+            [
+                "460ff46b2fbadde7"
+            ]
+        ]
+    },
+    {
+        "id": "10bf5497e952a98b",
+        "type": "telegram sender",
+        "z": "c0f76c1bba3e54fe",
+        "name": "Send to Telegram",
+        "bot": "ed3fefd0ba28d00c",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 260,
+        "wires": [
+            [
+                "2e1224e87b7a9a14"
+            ]
+        ]
+    },
+    {
+        "id": "2e1224e87b7a9a14",
+        "type": "debug",
+        "z": "c0f76c1bba3e54fe",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4cb2694e3694066c",
+        "type": "inject",
+        "z": "c0f76c1bba3e54fe",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 140,
+        "wires": [
+            [
+                "ee881a5beadfdc64"
+            ]
+        ]
+    },
+    {
+        "id": "ee881a5beadfdc64",
+        "type": "change",
+        "z": "c0f76c1bba3e54fe",
+        "name": "Add Telegram parameters",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.username",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "6345974336",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "\"Hello\"",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 260,
+        "wires": [
+            [
+                "10bf5497e952a98b"
+            ]
+        ]
     },
     {
         "id": "64a0c6b6.128d78",
@@ -2535,14 +3067,14 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "2",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
+        "x": 140,
         "y": 80,
         "wires": [
             [
@@ -2555,7 +3087,7 @@
         "type": "function",
         "z": "9bfc2b6b.d09d68",
         "name": "",
-        "func": "var power = String(Math.floor(Math.random() * (600 - 200) + 200));\nmsg.payload = {\n    \"device\": \"device2\",\n    \"host\": \"NodeRed\",\n    \"power\": power+\"i\"\n}; \nreturn msg;\n\n",
+        "func": "var power = String(Math.floor(Math.random() * (600 - 200) + 200));\nmsg.payload = {\n    \"device\": \"device1\",\n    \"host\": \"NodeRed\",\n    \"power\": power+\"i\"\n}; \nreturn msg;\n\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -2677,5 +3209,3496 @@
         "x": 600,
         "y": 380,
         "wires": []
+    },
+    {
+        "id": "a7dbcc7104758187",
+        "type": "inject",
+        "z": "8bf9f66cbbdb9c5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "257503c058210b8e"
+            ]
+        ]
+    },
+    {
+        "id": "257503c058210b8e",
+        "type": "http request",
+        "z": "8bf9f66cbbdb9c5d",
+        "name": "Recent Quakes",
+        "method": "GET",
+        "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.csv",
+        "tls": "",
+        "x": 280,
+        "y": 100,
+        "wires": [
+            [
+                "c9746091cf1ce73d"
+            ]
+        ]
+    },
+    {
+        "id": "c9746091cf1ce73d",
+        "type": "csv",
+        "z": "8bf9f66cbbdb9c5d",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": 0,
+        "strings": true,
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "f6fb263f588dc1f5",
+                "baed6c532f8ce41f"
+            ]
+        ]
+    },
+    {
+        "id": "f6fb263f588dc1f5",
+        "type": "switch",
+        "z": "8bf9f66cbbdb9c5d",
+        "name": "",
+        "property": "payload.mag",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "5",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 490,
+        "y": 160,
+        "wires": [
+            [
+                "2349ec377554e2de"
+            ]
+        ]
+    },
+    {
+        "id": "2349ec377554e2de",
+        "type": "change",
+        "z": "8bf9f66cbbdb9c5d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "PANIC!",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 220,
+        "wires": [
+            [
+                "d9f8f15840fdc09a"
+            ]
+        ]
+    },
+    {
+        "id": "d9f8f15840fdc09a",
+        "type": "debug",
+        "z": "8bf9f66cbbdb9c5d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "complete": false,
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "baed6c532f8ce41f",
+        "type": "debug",
+        "z": "8bf9f66cbbdb9c5d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "09560b6b6dcc4b33",
+        "type": "comment",
+        "z": "f4e5f505197bfb40",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "153581cacc0a004c",
+        "type": "inject",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 280,
+        "wires": [
+            [
+                "42a72e7a0fac6a80"
+            ]
+        ]
+    },
+    {
+        "id": "51e3a5bb9ec8adb7",
+        "type": "debug",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "42a72e7a0fac6a80",
+        "type": "function",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "51e3a5bb9ec8adb7",
+                "6fe263d8febc5651"
+            ]
+        ]
+    },
+    {
+        "id": "6fe263d8febc5651",
+        "type": "ui_text",
+        "z": "f4e5f505197bfb40",
+        "group": "0dd55aaae3ba3af1",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Time",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "87c45823811dc967",
+        "type": "mqtt in",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "topic": "/home/livingroom/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 140,
+        "y": 380,
+        "wires": [
+            [
+                "a915c82d637ea94e",
+                "64c6ad823f630554"
+            ]
+        ]
+    },
+    {
+        "id": "a915c82d637ea94e",
+        "type": "ui_gauge",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "group": "0dd55aaae3ba3af1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Living room temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "30",
+        "x": 510,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "64c6ad823f630554",
+        "type": "function",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "func": "var livingroom = msg.payload;\nflow.set('livingroom',livingroom);\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 460,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d9eced12cd019265",
+        "type": "ui_gauge",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "group": "0dd55aaae3ba3af1",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Outside temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 500,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "6bf2b5c3af26a219",
+        "type": "mqtt in",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "topic": "/home/outside/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "d9eced12cd019265",
+                "809fdc5b4004063a"
+            ]
+        ]
+    },
+    {
+        "id": "809fdc5b4004063a",
+        "type": "function",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "func": "var outsidetemperature = msg.payload;\nflow.set('outsidetemperature',outsidetemperature);\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 470,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7f83ab6a534b429",
+        "type": "function",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "func": "outsidetemperature = flow.get('outsidetemperature');\nlivingroom = flow.get('livingroom');\n\n\nmsg.payload = \"Hello, the outside temperature is \" + outsidetemperature + \" degree\" + \" in the living room you have now \" + livingroom + \" degree\";\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 320,
+        "y": 700,
+        "wires": [
+            [
+                "71e873e06b184d8b"
+            ]
+        ]
+    },
+    {
+        "id": "7194b02327a8448d",
+        "type": "inject",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 680,
+        "wires": [
+            [
+                "f7f83ab6a534b429"
+            ]
+        ]
+    },
+    {
+        "id": "71e873e06b184d8b",
+        "type": "debug",
+        "z": "f4e5f505197bfb40",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "ea7b3fcc899fb3c6",
+        "type": "mqtt in",
+        "z": "2e6f27de0323236f",
+        "name": "",
+        "topic": "/counters/#",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "e291a7f9eec9b405"
+            ]
+        ]
+    },
+    {
+        "id": "e291a7f9eec9b405",
+        "type": "debug",
+        "z": "2e6f27de0323236f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "88562580e614f500",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "extract body",
+        "func": "\nreturn {\n    payload: msg.payload.body\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 370,
+        "y": 560,
+        "wires": [
+            [
+                "5d8774b717ebecd6"
+            ]
+        ]
+    },
+    {
+        "id": "3063a0e59574222f",
+        "type": "switch",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "property": "payload.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "get_temperature",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "allarme_totale",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "allarme_notte",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 370,
+        "y": 680,
+        "wires": [
+            [
+                "7f45555c4038c3ba"
+            ],
+            [
+                "6bfd7010c40ffb3e"
+            ],
+            [
+                "13d590633e07a0b1"
+            ]
+        ]
+    },
+    {
+        "id": "5d8774b717ebecd6",
+        "type": "json",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 540,
+        "y": 560,
+        "wires": [
+            [
+                "3063a0e59574222f",
+                "588c28bcba95e4cf"
+            ]
+        ]
+    },
+    {
+        "id": "a79fd23614e56619",
+        "type": "mqtt in",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "topic": "/home/ebus/outsidetemp",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 130,
+        "y": 20,
+        "wires": [
+            [
+                "5f86a85ef936bc0f",
+                "83fc43c607caf698",
+                "380ff4939ac1b9ca"
+            ]
+        ]
+    },
+    {
+        "id": "5f86a85ef936bc0f",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "var_set_outsidetemperature",
+        "func": "var outsidetemperature = msg.payload;\nflow.set('outsidetemperature',outsidetemperature);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 640,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f45555c4038c3ba",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "create_string",
+        "func": "outsidetemperature = flow.get('outsidetemperature');\nlivingroom = flow.get('livingroom');\nzonanotte = flow.get('zonanotte');\n\n\n\nmsg.payload = \"Hello, the outside temperature is \" + outsidetemperature + \" degree\" + \" in the living room you have now \" + livingroom + \" degree\" + \" in the night zone there are \" + zonanotte;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 610,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c4924d6680eae740",
+        "type": "mqtt in",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "topic": "/home/comelit/zonagiorno",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "f487cee776555a4c",
+                "a6e2dd7dfeb47c8d"
+            ]
+        ]
+    },
+    {
+        "id": "f487cee776555a4c",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "var_set_livingroom",
+        "func": "var livingroom = msg.payload;\nflow.set('livingroom',livingroom);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65fe6deae7a996d9",
+        "type": "mqtt in",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "topic": "/home/comelit/zonanotte",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "411ce086a4b130b0",
+                "82ffc61ecd8b2e1c"
+            ]
+        ]
+    },
+    {
+        "id": "411ce086a4b130b0",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "var_set_zonanotte",
+        "func": "var zonanotte = msg.payload;\nflow.set('zonanotte',zonanotte);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "588c28bcba95e4cf",
+        "type": "debug",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 780,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b3c00f52aaa9bc25",
+        "type": "mqtt in",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "topic": "/home/comelit/consumo",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 140,
+        "y": 1020,
+        "wires": [
+            [
+                "5810ca1e780142fd"
+            ]
+        ]
+    },
+    {
+        "id": "5810ca1e780142fd",
+        "type": "switch",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "3000",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 1020,
+        "wires": [
+            [
+                "446be214fc4a2d9d"
+            ]
+        ]
+    },
+    {
+        "id": "446be214fc4a2d9d",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "create_string",
+        "func": "\nvar consumo = msg.payload;\n\nmsg.payload = \"Attention, excessive power consumption. \" + consumo + \" watt\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 490,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6bfd7010c40ffb3e",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "curl -s -D -  http://192.168.2.230/login.cgi --data \"code=111111\"",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 720,
+        "y": 840,
+        "wires": [
+            [
+                "1f755b190b27c853"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1f755b190b27c853",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "create TOTALE activation curl string",
+        "func": "var string = msg.payload;\n\nvar arr = string.match(/Set-Cookie\\: uid\\=(.*)/g);\n\nuid = arr[0].replace(\"Set-Cookie\\: uid\\=\",\"\");\n\ncurl_string = \"curl 'http://192.168.2.230/action.cgi?force=1^&vedo=1^&tot=8^&_=1577551204806' -H 'Connection: keep-alive' -H 'Accept: */*' -H 'X-Requested-With: XMLHttpRequest' -H 'Cookie: uid={ID}' --compressed --insecure\"\ncurl_string = curl_string.replace('{ID}',uid);\n\nmsg.payload = curl_string;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1120,
+        "y": 860,
+        "wires": [
+            [
+                "2c7ced8560d57c09"
+            ]
+        ]
+    },
+    {
+        "id": "2c7ced8560d57c09",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1370,
+        "y": 860,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "999bee456530f795",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "create NOTTE activation curl strings",
+        "func": "var string = msg.payload;\nvar arr = string.match(/Set-Cookie\\: uid\\=(.*)/g);\nuid = arr[0].replace(\"Set-Cookie\\: uid\\=\",\"\");\n\n\ncurl_string_pers_fin_notte = \"curl 'http://192.168.2.230/action.cgi?force=1&vedo=1&tot=0&_=1577551205797' -H 'Connection: keep-alive' -H 'Accept: */*' -H 'X-Requested-With: XMLHttpRequest'-H 'Referer: http://192.168.2.230/user/index.htm' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.9,it;q=0.8' -H 'Cookie: uid={ID}' --compressed --insecure\";\ncurl_string_pers_fin_notte = curl_string_pers_fin_notte.replace('{ID}',uid);\n\ncurl_string_pers_fin_giorno = \"curl 'http://192.168.2.230/action.cgi?force=1&vedo=1&tot=1&_=1577551205932' -H 'Connection: keep-alive' -H 'Accept: */*' -H 'X-Requested-With: XMLHttpRequest' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36 Edg/79.0.309.56' -H 'Referer: http://192.168.2.230/user/index.htm' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.9,it;q=0.8' -H 'Cookie: uid={ID}' --compressed --insecure\";\ncurl_string_pers_fin_giorno = curl_string_pers_fin_giorno.replace('{ID}',uid);\n\ncurl_string_pers_fin_rustico = \"curl 'http://192.168.2.230/action.cgi?vedo=1&tot=4&_=1577551206027' -H 'Connection: keep-alive' -H 'Accept: */*' -H 'X-Requested-With: XMLHttpRequest' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36 Edg/79.0.309.56' -H 'Referer: http://192.168.2.230/user/index.htm' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.9,it;q=0.8' -H 'Cookie: uid={ID}' --compressed --insecure\";\ncurl_string_pers_fin_rustico = curl_string_pers_fin_rustico.replace('{ID}',uid);\n\ncurl_string_sensori_rustico = \"curl 'http://192.168.2.230/action.cgi?vedo=1&tot=5&_=1577551206107' -H 'Connection: keep-alive' -H 'Accept: */*' -H 'X-Requested-With: XMLHttpRequest' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36 Edg/79.0.309.56' -H 'Referer: http://192.168.2.230/user/index.htm' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.9,it;q=0.8' -H 'Cookie: uid={ID}' --compressed --insecure\";\ncurl_string_sensori_rustico = curl_string_sensori_rustico.replace('{ID}',uid);\n\n\nmsg.payload = curl_string_pers_fin_notte + \" | \" + curl_string_pers_fin_giorno + \" | \" + curl_string_pers_fin_rustico + \" | \" + curl_string_sensori_rustico;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1130,
+        "y": 920,
+        "wires": [
+            [
+                "b720f713842e8028"
+            ]
+        ]
+    },
+    {
+        "id": "13d590633e07a0b1",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "curl -s -D -  http://192.168.2.230/login.cgi --data \"code=111111\"",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 720,
+        "y": 900,
+        "wires": [
+            [
+                "999bee456530f795"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b720f713842e8028",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1370,
+        "y": 920,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f3ab68f637d05156",
+        "type": "link in",
+        "z": "580a9e1e359fcac7",
+        "name": "Arma allarme TOTALE ",
+        "links": [
+            "baf4889084854703"
+        ],
+        "x": 355,
+        "y": 840,
+        "wires": [
+            [
+                "6bfd7010c40ffb3e"
+            ]
+        ]
+    },
+    {
+        "id": "599e050920cea836",
+        "type": "link in",
+        "z": "580a9e1e359fcac7",
+        "name": "Arma Allarme NOTTE",
+        "links": [
+            "181262f5a9848ad5"
+        ],
+        "x": 355,
+        "y": 900,
+        "wires": [
+            [
+                "13d590633e07a0b1"
+            ]
+        ]
+    },
+    {
+        "id": "baf4889084854703",
+        "type": "link out",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "links": [
+            "f3ab68f637d05156"
+        ],
+        "x": 1200,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "181262f5a9848ad5",
+        "type": "link out",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "links": [
+            "599e050920cea836"
+        ],
+        "x": 1195,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "d06c2acd93c9cae0",
+        "type": "mqtt in",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "topic": "home/alarm",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "ced52289f6d45759"
+            ]
+        ]
+    },
+    {
+        "id": "2abb6419753aa0e9",
+        "type": "mqtt in",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "topic": "/home/comelit/taverna",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 120,
+        "y": 200,
+        "wires": [
+            [
+                "beecf7e8b6912cc4"
+            ]
+        ]
+    },
+    {
+        "id": "dd239e292e099ba9",
+        "type": "mqtt in",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "topic": "/home/comelit/garage",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "22bde934c488590b"
+            ]
+        ]
+    },
+    {
+        "id": "ce7a0a82337c7521",
+        "type": "inject",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 360,
+        "wires": [
+            [
+                "b37c08ae89e3c443"
+            ]
+        ]
+    },
+    {
+        "id": "b37c08ae89e3c443",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "timestamToDate",
+        "func": "var dt = new Date(msg.payload);\nvar str = dt.toISOString().slice(0, 19).replace('T', ' ');\n\nmsg.payload = str;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 400,
+        "y": 360,
+        "wires": [
+            [
+                "6d07ba71bdb0c181"
+            ]
+        ]
+    },
+    {
+        "id": "05b53114796e5a6c",
+        "type": "ui_button",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "group": "57ee7f728ffc9556",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Arma allarme Totale",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 1020,
+        "y": 40,
+        "wires": [
+            [
+                "baf4889084854703"
+            ]
+        ]
+    },
+    {
+        "id": "164bd9df776254d9",
+        "type": "ui_button",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "group": "57ee7f728ffc9556",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Arma Allarme Notte",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 1010,
+        "y": 100,
+        "wires": [
+            [
+                "181262f5a9848ad5"
+            ]
+        ]
+    },
+    {
+        "id": "ced52289f6d45759",
+        "type": "ui_text",
+        "z": "580a9e1e359fcac7",
+        "group": "57ee7f728ffc9556",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Stato Allarme",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 690,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6d07ba71bdb0c181",
+        "type": "ui_text",
+        "z": "580a9e1e359fcac7",
+        "group": "ba832ad665e82337",
+        "order": 6,
+        "width": "3",
+        "height": "1",
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 670,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "83fc43c607caf698",
+        "type": "ui_gauge",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "group": "ba832ad665e82337",
+        "order": 8,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Esterna",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1120,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "a6e2dd7dfeb47c8d",
+        "type": "ui_gauge",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "group": "ba832ad665e82337",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Zona Giorno",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 690,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "82ffc61ecd8b2e1c",
+        "type": "ui_gauge",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "group": "ba832ad665e82337",
+        "order": 3,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Zona Notte",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 690,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "beecf7e8b6912cc4",
+        "type": "ui_gauge",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "group": "ba832ad665e82337",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Rustico",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 680,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "22bde934c488590b",
+        "type": "ui_gauge",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "group": "ba832ad665e82337",
+        "order": 5,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Garage",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 680,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "380ff4939ac1b9ca",
+        "type": "ui_chart",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "group": "ba832ad665e82337",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "label": "Chart Temp Esterno",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 1160,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd9cd58b4533c66f",
+        "type": "inject",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 820,
+        "wires": [
+            [
+                "7f45555c4038c3ba"
+            ]
+        ]
+    },
+    {
+        "id": "57ba7201ab9d1447",
+        "type": "ui_button",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "group": "ba832ad665e82337",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Tell me about temperatures",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "x": 180,
+        "y": 740,
+        "wires": [
+            [
+                "7f45555c4038c3ba"
+            ]
+        ]
+    },
+    {
+        "id": "5aca2d7df92fcd2a",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "curl -s http://192.168.2.252/login.json",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 350,
+        "y": 1240,
+        "wires": [
+            [
+                "db1c7789025c297d"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "db1c7789025c297d",
+        "type": "json",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 590,
+        "y": 1240,
+        "wires": [
+            [
+                "8681fb12883bc7a6"
+            ]
+        ]
+    },
+    {
+        "id": "8681fb12883bc7a6",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "Create string GIARDINO OVEST ON",
+        "func": "var token=msg.payload.dataora;\n\n\n\n\nvar url = \"curl -s http://192.168.2.252/user/action.cgi?type=irrigation\\\\&num1=0\\\\&_=\"+token;\n\nmsg.payload = url;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 830,
+        "y": 1160,
+        "wires": [
+            [
+                "ebadb1eb101cba0c",
+                "8f44553dfae4c790"
+            ]
+        ]
+    },
+    {
+        "id": "8f44553dfae4c790",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1090,
+        "y": 1240,
+        "wires": [
+            [
+                "ebadb1eb101cba0c",
+                "3d5097324071bee9"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fdf45b53949aa191",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "Create string GIARDINO OVEST OFF",
+        "func": "var token=msg.payload.dataora;\n\nvar url = \"curl -s http://192.168.2.252/user/action.cgi?type=irrigation\\\\&num0=0\\\\&_=\"+token;\n\nmsg.payload = url;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 850,
+        "y": 1560,
+        "wires": [
+            [
+                "476d370597b07931"
+            ]
+        ]
+    },
+    {
+        "id": "476d370597b07931",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 1090,
+        "y": 1560,
+        "wires": [
+            [
+                "6bf152ceeeb55a1b"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "28695b34ee69e044",
+        "type": "delay",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "pauseType": "delayv",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 440,
+        "y": 1320,
+        "wires": [
+            [
+                "2128ef47cb9d2693"
+            ]
+        ]
+    },
+    {
+        "id": "a8b89b6d5a813145",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "curl -s http://192.168.2.252/login.json",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 340,
+        "y": 1560,
+        "wires": [
+            [
+                "2e3a2b6883618c60"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2e3a2b6883618c60",
+        "type": "json",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 580,
+        "y": 1560,
+        "wires": [
+            [
+                "fdf45b53949aa191"
+            ]
+        ]
+    },
+    {
+        "id": "2128ef47cb9d2693",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "curl -s http://192.168.2.252/login.json",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 330,
+        "y": 1420,
+        "wires": [
+            [
+                "df240359e47780dc"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "df240359e47780dc",
+        "type": "json",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 570,
+        "y": 1420,
+        "wires": [
+            [
+                "4488d61a3272a9df"
+            ]
+        ]
+    },
+    {
+        "id": "4488d61a3272a9df",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "Create string GIARDINO EST ON",
+        "func": "var token=msg.payload.dataora;\n\n\n\n\nvar url = \"curl -s http://192.168.2.252/user/action.cgi?type=irrigation\\\\&num1=1\\\\&_=\"+token;\n\nmsg.payload = url;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 820,
+        "y": 1420,
+        "wires": [
+            [
+                "340cb6accf01ebb8"
+            ]
+        ]
+    },
+    {
+        "id": "340cb6accf01ebb8",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1070,
+        "y": 1420,
+        "wires": [
+            [
+                "431af028af7025cf",
+                "a8b89b6d5a813145",
+                "5ed009ea5185bd7c"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8bdd46551406316f",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "Create string GIARDINO EST OFF",
+        "func": "var token=msg.payload.dataora;\n\nvar url = \"curl -s http://192.168.2.252/user/action.cgi?type=irrigation\\\\&num0=1\\\\&_=\"+token;\n\nmsg.payload = url;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 820,
+        "y": 1880,
+        "wires": [
+            [
+                "c97cdd3509fe9042"
+            ]
+        ]
+    },
+    {
+        "id": "c97cdd3509fe9042",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1060,
+        "y": 1880,
+        "wires": [
+            [
+                "cf92d94b4ed17531",
+                "3aaa41967d088eb2"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6bf152ceeeb55a1b",
+        "type": "delay",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "pauseType": "delayv",
+        "timeout": "10",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 1660,
+        "wires": [
+            [
+                "e4b36aa92b20efdc"
+            ]
+        ]
+    },
+    {
+        "id": "c403bee10169ea9f",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "curl -s http://192.168.2.252/login.json",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 320,
+        "y": 1880,
+        "wires": [
+            [
+                "d44c4aee92949663"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d44c4aee92949663",
+        "type": "json",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 560,
+        "y": 1880,
+        "wires": [
+            [
+                "8bdd46551406316f"
+            ]
+        ]
+    },
+    {
+        "id": "e4b36aa92b20efdc",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "curl -s http://192.168.2.252/login.json",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 330,
+        "y": 1760,
+        "wires": [
+            [
+                "f53c8b9989327c48"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f53c8b9989327c48",
+        "type": "json",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 570,
+        "y": 1760,
+        "wires": [
+            [
+                "98d0ba1140765753"
+            ]
+        ]
+    },
+    {
+        "id": "98d0ba1140765753",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "Create string GIARDINO RETRO ON",
+        "func": "var token=msg.payload.dataora;\n\n\n\n\nvar url = \"curl -s http://192.168.2.252/user/action.cgi?type=irrigation\\\\&num1=2\\\\&_=\"+token;\n\nmsg.payload = url;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 830,
+        "y": 1760,
+        "wires": [
+            [
+                "4783620fbeaa43e0"
+            ]
+        ]
+    },
+    {
+        "id": "4783620fbeaa43e0",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1070,
+        "y": 1760,
+        "wires": [
+            [
+                "ab7882b5a103c526",
+                "c403bee10169ea9f"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "bc1fbe95fe268f29",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "Create string GIARDINO RETRO OFF",
+        "func": "var token=msg.payload.dataora;\n\nvar url = \"curl -s http://192.168.2.252/user/action.cgi?type=irrigation\\\\&num0=2\\\\&_=\"+token;\n\nmsg.payload = url;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 810,
+        "y": 2100,
+        "wires": [
+            [
+                "53ae415dadbfa0f8"
+            ]
+        ]
+    },
+    {
+        "id": "53ae415dadbfa0f8",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1040,
+        "y": 2100,
+        "wires": [
+            [
+                "063d80ff3149efa1"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "cf92d94b4ed17531",
+        "type": "delay",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "pauseType": "delayv",
+        "timeout": "10",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 220,
+        "y": 2000,
+        "wires": [
+            [
+                "c7f51e5329d6cae7"
+            ]
+        ]
+    },
+    {
+        "id": "c7f51e5329d6cae7",
+        "type": "exec",
+        "z": "580a9e1e359fcac7",
+        "command": "curl -s http://192.168.2.252/login.json",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 300,
+        "y": 2100,
+        "wires": [
+            [
+                "9099dea67d5a274f"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9099dea67d5a274f",
+        "type": "json",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 540,
+        "y": 2100,
+        "wires": [
+            [
+                "bc1fbe95fe268f29"
+            ]
+        ]
+    },
+    {
+        "id": "b39a002c6a74a07e",
+        "type": "ui_button",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "group": "961338c0cb75a80b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Esegui Irrigazione Totale",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 120,
+        "y": 1140,
+        "wires": [
+            [
+                "5aca2d7df92fcd2a"
+            ]
+        ]
+    },
+    {
+        "id": "ebadb1eb101cba0c",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "var_stato_irrigazione",
+        "func": "msg.payload = 'OVEST';\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1240,
+        "wires": [
+            [
+                "0f0f660ecffc390c"
+            ]
+        ]
+    },
+    {
+        "id": "0f0f660ecffc390c",
+        "type": "ui_text",
+        "z": "580a9e1e359fcac7",
+        "group": "961338c0cb75a80b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Stato Irrigazione",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1700,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "063d80ff3149efa1",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "var_stato_irrigazione",
+        "func": "msg.payload = 'OFF';\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1280,
+        "y": 2100,
+        "wires": [
+            [
+                "0f0f660ecffc390c"
+            ]
+        ]
+    },
+    {
+        "id": "431af028af7025cf",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "var_stato_irrigazione",
+        "func": "msg.payload = 'EST';\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1340,
+        "y": 1460,
+        "wires": [
+            [
+                "0f0f660ecffc390c"
+            ]
+        ]
+    },
+    {
+        "id": "ab7882b5a103c526",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "var_stato_irrigazione",
+        "func": "msg.payload = 'RETRO';\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1320,
+        "y": 1760,
+        "wires": [
+            [
+                "0f0f660ecffc390c"
+            ]
+        ]
+    },
+    {
+        "id": "3d84802a7f43a9db",
+        "type": "ui_slider",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "label": "Intervallo tra zone",
+        "tooltip": "",
+        "group": "961338c0cb75a80b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": "1",
+        "max": "20",
+        "step": 1,
+        "x": 500,
+        "y": 1140,
+        "wires": [
+            [
+                "c5b151fb38ee7daa",
+                "858d82760142af25"
+            ]
+        ]
+    },
+    {
+        "id": "c5b151fb38ee7daa",
+        "type": "ui_text",
+        "z": "580a9e1e359fcac7",
+        "group": "961338c0cb75a80b",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Intervallo impostato (min)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 810,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "18fb6f9736f690b1",
+        "type": "inject",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 60,
+        "y": 1220,
+        "wires": [
+            [
+                "5aca2d7df92fcd2a"
+            ]
+        ]
+    },
+    {
+        "id": "3d5097324071bee9",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "get Intervallo zonge giardino",
+        "func": "msg.delay = 60 * 1000 * flow.get('intervallozonegiardino');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 1320,
+        "wires": [
+            [
+                "28695b34ee69e044",
+                "9b3daabfd59ab701"
+            ]
+        ]
+    },
+    {
+        "id": "858d82760142af25",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "set intervallo zone giardino",
+        "func": "var intervallozonegiardino = msg.payload;\nflow.set('intervallozonegiardino',intervallozonegiardino);\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ec12205f45cbabd",
+        "type": "ui_text",
+        "z": "580a9e1e359fcac7",
+        "group": "961338c0cb75a80b",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Tempo mancante OVEST (min)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 2250,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "600ea44bccab029f",
+        "type": "ui_text",
+        "z": "580a9e1e359fcac7",
+        "group": "961338c0cb75a80b",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Tempo mancante EST (min)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 2200,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "07110f03db354c50",
+        "type": "ui_text",
+        "z": "580a9e1e359fcac7",
+        "group": "961338c0cb75a80b",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Tempo mancante RETRO (min)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 2170,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "78cb1f661cc25218",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "func": "let i=msg.payload;\n\nif (i >= 0){\n    i--;\n    msg.payload = i;\n    node.send(msg);\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1840,
+        "y": 1640,
+        "wires": [
+            [
+                "e2c5e12bed4b56a4"
+            ]
+        ]
+    },
+    {
+        "id": "9b3daabfd59ab701",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "func": "msg.payload =  msg.delay/60/1000;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1840,
+        "y": 1580,
+        "wires": [
+            [
+                "6ec12205f45cbabd",
+                "78cb1f661cc25218"
+            ]
+        ]
+    },
+    {
+        "id": "e2c5e12bed4b56a4",
+        "type": "delay",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 2000,
+        "y": 1640,
+        "wires": [
+            [
+                "6ec12205f45cbabd",
+                "78cb1f661cc25218"
+            ]
+        ]
+    },
+    {
+        "id": "c76d5803975f03c4",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "func": "let i=msg.payload;\n\nif (i >= 0){\n    i--;\n    msg.payload = i;\n    node.send(msg);\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1820,
+        "y": 1860,
+        "wires": [
+            [
+                "59a172f4f616c9ab"
+            ]
+        ]
+    },
+    {
+        "id": "1816229da7206a07",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "func": "msg.payload =  msg.delay/60/1000;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1810,
+        "y": 1740,
+        "wires": [
+            [
+                "c76d5803975f03c4",
+                "600ea44bccab029f"
+            ]
+        ]
+    },
+    {
+        "id": "59a172f4f616c9ab",
+        "type": "delay",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 1960,
+        "y": 1860,
+        "wires": [
+            [
+                "600ea44bccab029f",
+                "c76d5803975f03c4"
+            ]
+        ]
+    },
+    {
+        "id": "f3b51386d5759df0",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "func": "let i=msg.payload;\n\nif (i >= 0){\n    i--;\n    msg.payload = i;\n    node.send(msg);\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1820,
+        "y": 2040,
+        "wires": [
+            [
+                "60ee028c04923f2c"
+            ]
+        ]
+    },
+    {
+        "id": "85a9af5c75f06c60",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "func": "msg.payload =  msg.delay/60/1000;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1810,
+        "y": 1980,
+        "wires": [
+            [
+                "f3b51386d5759df0",
+                "07110f03db354c50"
+            ]
+        ]
+    },
+    {
+        "id": "60ee028c04923f2c",
+        "type": "delay",
+        "z": "580a9e1e359fcac7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 1960,
+        "y": 2040,
+        "wires": [
+            [
+                "07110f03db354c50",
+                "f3b51386d5759df0"
+            ]
+        ]
+    },
+    {
+        "id": "5ed009ea5185bd7c",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "get Intervallo zonge giardino",
+        "func": "msg.delay = 60 * 1000 * flow.get('intervallozonegiardino');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 1560,
+        "wires": [
+            [
+                "1816229da7206a07"
+            ]
+        ]
+    },
+    {
+        "id": "3aaa41967d088eb2",
+        "type": "function",
+        "z": "580a9e1e359fcac7",
+        "name": "get Intervallo zonge giardino",
+        "func": "msg.delay = 60 * 1000 * flow.get('intervallozonegiardino');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 1880,
+        "wires": [
+            [
+                "85a9af5c75f06c60"
+            ]
+        ]
+    },
+    {
+        "id": "3210e022b087f367",
+        "type": "inject",
+        "z": "2a33ce0fad1432b1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "5913c33a60e8502f"
+            ]
+        ]
+    },
+    {
+        "id": "5913c33a60e8502f",
+        "type": "function",
+        "z": "2a33ce0fad1432b1",
+        "name": "",
+        "func": "msg.payload = {\"id\" : \"Powermeter\", \"Value\" : 400}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "14469992bbaa4049",
+                "21c831c5d35c088c"
+            ]
+        ]
+    },
+    {
+        "id": "14469992bbaa4049",
+        "type": "debug",
+        "z": "2a33ce0fad1432b1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "21c831c5d35c088c",
+        "type": "influxdb out",
+        "z": "2a33ce0fad1432b1",
+        "influxdb": "dfafb391.8a17d",
+        "name": "",
+        "measurement": "power",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 330,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6abe2e75d920dccb",
+        "type": "function",
+        "z": "5d42170d114bba9f",
+        "name": "Sleep Timer",
+        "func": "\nvar value  = context.get('value') || 60000;\n\nif (msg.topic == \"value\")\n{\n  value = msg.payload * 60000;\n  context.set('value',value);  \n}\n\nelse if (msg.topic == \"start\")\n{\n\nvar timer = setTimeout(function(){msg.payload = \"off\";node.send([msg,{ payload: \"Ende\" }]);var countdownstop  = context.get('countdown');clearInterval(countdownstop)},value);\ncontext.set('timer',timer); \n\nvar count = value/60000;\n//count = count -1 ;\nmsg.payload=count;\nnode.send([null,msg]);\nvar countdown = setInterval(function() {count=count-1;msg.payload=count; node.send([null,msg]) }, 60000);\ncontext.set('countdown',countdown);\n\n}\n\nelse if (msg.topic == \"stop\")\n{\nvar timerstop  = context.get('timer')\nclearTimeout(timerstop);\n\nvar countdownstop  = context.get('countdown')\nclearInterval(countdownstop);\n\n}\n\n\n",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 630,
+        "y": 340,
+        "wires": [
+            [
+                "3812bd7b01ed9280"
+            ],
+            [
+                "162810e840a27acc"
+            ]
+        ]
+    },
+    {
+        "id": "8be6f066d6a0ec78",
+        "type": "ui_button",
+        "z": "5d42170d114bba9f",
+        "d": true,
+        "name": "",
+        "group": "4e53f268.aaddbc",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "start",
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "6abe2e75d920dccb"
+            ]
+        ]
+    },
+    {
+        "id": "a499b918173cbb4d",
+        "type": "ui_numeric",
+        "z": "5d42170d114bba9f",
+        "d": true,
+        "name": "",
+        "label": "Sleep Timer in Minuten",
+        "tooltip": "",
+        "group": "4e53f268.aaddbc",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "wrap": false,
+        "passthru": true,
+        "topic": "value",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "300",
+        "step": 1,
+        "x": 430,
+        "y": 400,
+        "wires": [
+            [
+                "6abe2e75d920dccb"
+            ]
+        ]
+    },
+    {
+        "id": "2c792a2156fe79d9",
+        "type": "ui_button",
+        "z": "5d42170d114bba9f",
+        "d": true,
+        "name": "",
+        "group": "4e53f268.aaddbc",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Stop",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "stop",
+        "x": 390,
+        "y": 360,
+        "wires": [
+            [
+                "6abe2e75d920dccb"
+            ]
+        ]
+    },
+    {
+        "id": "162810e840a27acc",
+        "type": "ui_text",
+        "z": "5d42170d114bba9f",
+        "d": true,
+        "group": "4e53f268.aaddbc",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Restzeit",
+        "format": "{{msg.payload}} Minuten",
+        "layout": "row-spread",
+        "x": 800,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "3812bd7b01ed9280",
+        "type": "debug",
+        "z": "5d42170d114bba9f",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 810,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "52cf79e0b7289dae",
+        "type": "debug",
+        "z": "5d42170d114bba9f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 930,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "802e7ecd6dae8236",
+        "type": "function",
+        "z": "5d42170d114bba9f",
+        "name": "",
+        "func": "// msg.delay is in milliseconds\nvar msg1 = { payload:\"first out of output 1\", delay:10000 };\n// if msg.delay is undefined, the delay node uses default\nvar msg2 = { payload:\"second out of output 1\" };\nvar msg3 = { payload:\"third out of output 1\", delay:0};\nvar msg4 = { payload:\"only message from output 2\"};\nreturn [ [ msg1, msg2, msg3 ], msg4 ];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 650,
+        "y": 640,
+        "wires": [
+            [
+                "b63ddef436164f0f"
+            ],
+            [
+                "895690dd79108f29"
+            ]
+        ]
+    },
+    {
+        "id": "6be68293e5844b91",
+        "type": "inject",
+        "z": "5d42170d114bba9f",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 520,
+        "y": 640,
+        "wires": [
+            [
+                "802e7ecd6dae8236"
+            ]
+        ]
+    },
+    {
+        "id": "b63ddef436164f0f",
+        "type": "delay",
+        "z": "5d42170d114bba9f",
+        "name": "",
+        "pauseType": "delayv",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 600,
+        "wires": [
+            [
+                "52cf79e0b7289dae"
+            ]
+        ]
+    },
+    {
+        "id": "895690dd79108f29",
+        "type": "debug",
+        "z": "5d42170d114bba9f",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 790,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "9c3def3c698a0ec5",
+        "type": "mqtt in",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "topic": "/CLIENT/1031C53A7D80/D_SET/21",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 240,
+        "y": 120,
+        "wires": [
+            [
+                "97c6bc025c7ace06"
+            ]
+        ]
+    },
+    {
+        "id": "5613aa283a2ca414",
+        "type": "ui_text",
+        "z": "b1e2318ee086c39f",
+        "group": "4e53f268.aaddbc",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Luce scala destra",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 750,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "bf850054505bf65d",
+        "type": "mqtt in",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "topic": "/CLIENT/1031C53A7D80/D_SET/17",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 240,
+        "y": 200,
+        "wires": [
+            [
+                "c18fd0f1f1a76ce1"
+            ]
+        ]
+    },
+    {
+        "id": "97c6bc025c7ace06",
+        "type": "change",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "str",
+                "to": "ACCESA",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "str",
+                "to": "SPENTA",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 120,
+        "wires": [
+            [
+                "5613aa283a2ca414"
+            ]
+        ]
+    },
+    {
+        "id": "c2e586846fa36b35",
+        "type": "ui_text",
+        "z": "b1e2318ee086c39f",
+        "group": "4e53f268.aaddbc",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Luce cucina",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 730,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c18fd0f1f1a76ce1",
+        "type": "change",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "str",
+                "to": "ACCESA",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "str",
+                "to": "SPENTA",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 200,
+        "wires": [
+            [
+                "c2e586846fa36b35"
+            ]
+        ]
+    },
+    {
+        "id": "aff62abe6e0dac69",
+        "type": "mqtt in",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "topic": "/SERVER/TEMP/1031C53A7D80/5",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 240,
+        "y": 560,
+        "wires": [
+            [
+                "8394cc4af4d7d940"
+            ]
+        ]
+    },
+    {
+        "id": "8394cc4af4d7d940",
+        "type": "ui_gauge",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "group": "7aab449204af3ced",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura interna",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "10",
+        "seg2": "20",
+        "x": 760,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "ac9eb1a7441aaf1e",
+        "type": "mqtt in",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "topic": "/SERVER/HUM/1031C53A7D80/5",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 240,
+        "y": 640,
+        "wires": [
+            [
+                "7fa36da69ba6ce72"
+            ]
+        ]
+    },
+    {
+        "id": "7fa36da69ba6ce72",
+        "type": "ui_gauge",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "group": "6f013033ac697967",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Umidità Interna",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "60",
+        "x": 740,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "d250b17c37063d1d",
+        "type": "mqtt in",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "topic": "/SERVER/TEMP/CC90038E0D84/17",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 240,
+        "y": 720,
+        "wires": [
+            [
+                "f8b2b40f93dd1124"
+            ]
+        ]
+    },
+    {
+        "id": "f8b2b40f93dd1124",
+        "type": "ui_gauge",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "group": "7aab449204af3ced",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura esterna",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "10",
+        "seg2": "20",
+        "x": 760,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "88f379e6f5e49dcc",
+        "type": "mqtt in",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "topic": "/SERVER/HUM/CC90038E0D84/17",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 240,
+        "y": 820,
+        "wires": [
+            [
+                "4b15cd660b9b5d0b"
+            ]
+        ]
+    },
+    {
+        "id": "4b15cd660b9b5d0b",
+        "type": "ui_gauge",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "group": "6f013033ac697967",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Umidità esterna",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "60",
+        "x": 740,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "e3bfb238a71d9a80",
+        "type": "mqtt in",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "topic": "/CLIENT/CC90038E0D84/D_SET/22",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 240,
+        "y": 300,
+        "wires": [
+            [
+                "fde10a8e5396ad0f"
+            ]
+        ]
+    },
+    {
+        "id": "242a46eab743444e",
+        "type": "ui_text",
+        "z": "b1e2318ee086c39f",
+        "group": "4e53f268.aaddbc",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Luce salone 1",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 740,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "fde10a8e5396ad0f",
+        "type": "change",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "str",
+                "to": "ACCESA",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "str",
+                "to": "SPENTA",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "242a46eab743444e"
+            ]
+        ]
+    },
+    {
+        "id": "13214e6018bd0855",
+        "type": "mqtt in",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "topic": "/CLIENT/1031C53A7D80/D_SET/22",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 240,
+        "y": 360,
+        "wires": [
+            [
+                "05ddaac950cc97ee"
+            ]
+        ]
+    },
+    {
+        "id": "f5fab4f7c4cdd167",
+        "type": "ui_text",
+        "z": "b1e2318ee086c39f",
+        "group": "4e53f268.aaddbc",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Luce salone 2",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 740,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "05ddaac950cc97ee",
+        "type": "change",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "str",
+                "to": "ACCESA",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "str",
+                "to": "SPENTA",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 360,
+        "wires": [
+            [
+                "f5fab4f7c4cdd167"
+            ]
+        ]
+    },
+    {
+        "id": "0d561db0ddedaa01",
+        "type": "mqtt in",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "topic": "/CLIENT/1031C53A7D80/D_SET/19",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 240,
+        "y": 420,
+        "wires": [
+            [
+                "c5a3838fc3bc69fa"
+            ]
+        ]
+    },
+    {
+        "id": "b717363236189ea1",
+        "type": "ui_text",
+        "z": "b1e2318ee086c39f",
+        "group": "4e53f268.aaddbc",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Luce salone 3",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 740,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "c5a3838fc3bc69fa",
+        "type": "change",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "str",
+                "to": "ACCESA",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "str",
+                "to": "SPENTA",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 420,
+        "wires": [
+            [
+                "b717363236189ea1"
+            ]
+        ]
+    },
+    {
+        "id": "ace15da2b7ff2767",
+        "type": "mqtt in",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "topic": "/SERVER/A_GET/1031C53A7D80/36",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "inputs": 0,
+        "x": 170,
+        "y": 940,
+        "wires": [
+            [
+                "9b2b78feb286df12"
+            ]
+        ]
+    },
+    {
+        "id": "9b2b78feb286df12",
+        "type": "ui_gauge",
+        "z": "b1e2318ee086c39f",
+        "name": "",
+        "group": "94c81f8fb8733e6a",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Luminosità esterna",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "4095",
+        "colors": [
+            "#424242",
+            "#f3f3b4",
+            "#c8cb3a"
+        ],
+        "seg1": "1000",
+        "seg2": "2000",
+        "x": 670,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "8beda914cf422063",
+        "type": "inject",
+        "z": "dec9e6a9212ea5d6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "304af39ac5e578a3"
+            ]
+        ]
+    },
+    {
+        "id": "473172f27a96b92f",
+        "type": "debug",
+        "z": "dec9e6a9212ea5d6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "304af39ac5e578a3",
+        "type": "function",
+        "z": "dec9e6a9212ea5d6",
+        "name": "",
+        "func": "msg.payload = \"Hello\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "473172f27a96b92f"
+            ]
+        ]
+    },
+    {
+        "id": "a03f597658f1ed72",
+        "type": "inject",
+        "z": "58d1129b2260e717",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "4fbe2d82f704d79d"
+            ]
+        ]
+    },
+    {
+        "id": "8a46f1ca1ec24014",
+        "type": "debug",
+        "z": "58d1129b2260e717",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4fbe2d82f704d79d",
+        "type": "function",
+        "z": "58d1129b2260e717",
+        "name": "",
+        "func": "msg.payload = \"Hello world!\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 260,
+        "wires": [
+            [
+                "8a46f1ca1ec24014"
+            ]
+        ]
+    },
+    {
+        "id": "550d4688f40e1b47",
+        "type": "coap request",
+        "z": "45bb953573614f38",
+        "method": "GET",
+        "confirmable": true,
+        "observe": false,
+        "multicast": false,
+        "multicastTimeout": 20000,
+        "url": "coap://se4iot-simplecoapserver-remote:5684/temperature",
+        "content-format": "application/json",
+        "raw-buffer": false,
+        "name": "temperature",
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "24d3287ea2f647fa",
+                "6a3d0cb603fc1458",
+                "d826a46d997846ef"
+            ]
+        ]
+    },
+    {
+        "id": "7a7db5e45d9cb3a2",
+        "type": "inject",
+        "z": "45bb953573614f38",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "550d4688f40e1b47"
+            ]
+        ]
+    },
+    {
+        "id": "24d3287ea2f647fa",
+        "type": "debug",
+        "z": "45bb953573614f38",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "6a3d0cb603fc1458",
+        "type": "ui_gauge",
+        "z": "45bb953573614f38",
+        "name": "",
+        "group": "ec6d068c75e9a24b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d826a46d997846ef",
+        "type": "ui_chart",
+        "z": "45bb953573614f38",
+        "name": "",
+        "group": "ec6d068c75e9a24b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 260,
+        "wires": [
+            []
+        ]
     }
 ]

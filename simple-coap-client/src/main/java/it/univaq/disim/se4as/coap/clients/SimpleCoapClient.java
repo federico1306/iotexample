@@ -12,7 +12,7 @@ public class SimpleCoapClient {
 
     public static void main(String[] args) {
         // Create the CoAP client with the target URI
-      //  CoapClient client = new CoapClient("coap://127.0.0.1:5683/.well-known/core");
+    //   CoapClient client = new CoapClient("coap://127.0.0.1:5683/.well-known/core");
         CoapClient client = new CoapClient("coap://127.0.0.1:5684/temperature");
 
 

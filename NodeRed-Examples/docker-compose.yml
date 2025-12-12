@@ -17,12 +17,12 @@ services:
     #- ./mysql-data:/var/lib/mysql
 
 
-  adminer:
-    image: adminer
-    container_name: se4iot-mysql-adminer
-    restart: always
-    ports:
-      - "8080:8080"
+  # adminer:
+  #   image: adminer
+  #   container_name: se4iot-mysql-adminer
+  #   restart: always
+  #   ports:
+  #     - "8080:8080"
 #    networks:
 #      - se4iot-net
 
@@ -165,6 +165,25 @@ services:
       se4iot-network:
         ipv4_address: 172.30.0.105
 
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    depends_on:
+      - influxdb
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_INSTALL_PLUGINS=
+    links:
+      - influxdb
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./grafana:/var/lib/grafana
+    networks:
+      se4iot-network:
+        ipv4_address: 172.30.0.107
 
   openfire:
     container_name: se4iot-openfire

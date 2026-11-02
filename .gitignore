@@ -2,7 +2,6 @@
 NodeRed-Examples/nodered/data/.npm/*
 NodeRed-Examples/nodered/data/node_modules
 NodeRed-Examples/nodered/data/*.backup
-
 NodeRed-Examples/nodered-custom/data/.npm/*
 NodeRed-Examples/nodered-custom/data/node_modules
 NodeRed-Examples/nodered-custom/data/*.backup
@@ -11,10 +10,31 @@ it.univaq.disim.se4iot.mqtt/target/*
 it.univaq.disim.se4iot.rabbitmq/java/*.class
 OSGI-commandline/configuration/org.eclipse.osgi/*
 it.univaq.disim.se4iot.mqtt/target/classes/*
-.vscode/settings.json
 NodeRed-Examples/.vscode/settings.json
+
+rabbit-tutorial/classpath.txt
+
+.vscode/launch.json
+.vscode/settings.json
 
 it.univaq.disim.se4iot.coap.livingroom/*.class
 it.univaq.disim.se4iot.coap.homeclient/*.class
-rabbit-tutorial/classpath.txt
+it.univaq.disim.se4iot.coap.kitchen/*.class
+it.univaq.disim.se4iot.coap.livingroom/bin/*
+it.univaq.disim.se4iot.coap.homeclient/bin/*
+it.univaq.disim.se4iot.coap.kitchen/bin/*
+it.univaq.disim.se4iot.coap.livingroom/target/*
+it.univaq.disim.se4iot.coap.homeclient/target/*
+it.univaq.disim.se4iot.coap.kitchen/target/*
+it.univaq.disim.se4iot.coap.livingroom/src/main/resources/*
+it.univaq.disim.se4iot.coap.homeclient/src/main/resources/*
+it.univaq.disim.se4iot.coap.kitchen/src/main/resources/*
+it.univaq.disim.se4iot.coap.livingroom/src/main/java/*
+it.univaq.disim.se4iot.coap.homeclient/src/main/java/*
+it.univaq.disim.se4iot.coap.livingroom/src/main/java/it/univaq/disim/se4iot/coap/livingroom/*.class
+it.univaq.disim.se4iot.coap.homeclient/src/main/java/it/univaq/disim/se4iot/coap/homeclient/*.class
 
+
+it.univaq.disim.se4iot.influxdbexample/target/classes/.gitignore
+it.univaq.disim.se4iot.influxdbexample/target/classes/META-INF/MANIFEST.MF
+it.univaq.disim.se4iot.influxdbexample/target/classes/it/univaq/disim/se4iot/influxdbexample/*.class
